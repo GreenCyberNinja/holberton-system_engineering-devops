@@ -1,0 +1,1 @@
+this is the shellscript project 0x00-shell_basics

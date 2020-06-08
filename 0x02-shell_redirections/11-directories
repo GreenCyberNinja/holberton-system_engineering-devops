@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -b ./*
+find */ -maxdepth 0 -type d | wc-1

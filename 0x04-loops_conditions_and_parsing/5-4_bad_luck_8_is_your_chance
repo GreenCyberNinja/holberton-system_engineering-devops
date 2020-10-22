@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# this script is to display "Holberton School" with a while loop
+end=10
+i=0
+while ((i<end)); do 
+if ((i==7))
+then
+	echo "good luck"
+elif ((i==3))
+then
+	echo "bad luck"
+else
+	echo "Holberton School"
+fi
+((i=i+1))
+done

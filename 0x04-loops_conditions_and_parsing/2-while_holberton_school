@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this script is to display "Holberton School" with a while loop
+end=10
+i=0
+while ((i<end)); do 
+echo "Holberton School"
+((i=i+1))
+done

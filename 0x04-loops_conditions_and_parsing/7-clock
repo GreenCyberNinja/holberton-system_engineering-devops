@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# clock recreation
+h=1; m=1; hour=12; min=60
+while ((h <= hour)); do
+	while ((m < min)); do
+		echo $m
+		((m=m+1))
+	done
+	echo Hour:$h
+	m=1
+	((h=h+1))
+done

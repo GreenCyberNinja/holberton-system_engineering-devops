@@ -12,6 +12,10 @@ then
 		fi
 	else
 		echo "holbertonschool file is empty"
+		if [ ! -d "holbertonschool" ]
+		then
+			echo "holbertonschool is a regular file"
+		fi
 	fi
 else
 	echo "holbertonschool file does not exist"

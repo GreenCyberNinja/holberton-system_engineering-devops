@@ -2,7 +2,7 @@
 # clock recreation
 h=0; m=1; hour=12; min=60
 while ((h <= hour)); do
-	echo Head: $h
+	echo "Hour: $h"
 	while ((m < min)); do
 		echo $m
 		((m=m+1))

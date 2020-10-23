@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#fizzbuzz
+END=100
+for ((i=1;i<=END;i++)); do
+	if ! ((i % 3)) && ((i % 5))
+	then
+		echo "Fizz"
+	elif ((i % 3)) && ! ((i % 5))
+	then
+		echo "Buzz"
+	elif ! ((i % 3)) && ! ((i % 5))
+	then
+		echo "FizzBuzz"
+	else
+		echo "$i"
+	fi
+done

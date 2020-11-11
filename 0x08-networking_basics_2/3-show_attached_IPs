@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays all active ips
+ifconfig eth0 | grep  'inet addr' | cut -d: -f2 | awk '{print $1}'
+ifconfig lo | grep  'inet addr' | cut -d: -f2 | awk '{print $1}'

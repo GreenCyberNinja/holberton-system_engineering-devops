@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# configures an Ubuntu server
+ifconfig localhost 127.0.0.2
+ifconfig facebook.com 8.8.8.8

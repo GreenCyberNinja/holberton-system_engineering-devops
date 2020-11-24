@@ -1,0 +1,11 @@
+were adding to our simple design
+one additional server 
+to handle additional traffic and diverting for downtime
+one load-balancer
+to equally distrubute between the two servers
+to load-balance we will be using a HAProxy software algorithm because its the most common and widely used algos
+it works by using each server in turns according to their weight
+an active-active cluster is 2 or more nodes running simultamiously utilizeing a load balancer for client to connect to instead of the server directly
+a active-passive doesn't utilize a auto-loader but instead has one active node and then a passive node to handle overflow
+a master slave cluster works ki9nd of similar to active-passive where ther is one master handling operations and a slve node excuting said commands or data storage
+biggest issues with this design is theat there are no firewalls or HTTPS to secure the server controls from being accessed by anyone there also isnt any active monitoring to ensure that there are no bugs or bots trying to strain the server

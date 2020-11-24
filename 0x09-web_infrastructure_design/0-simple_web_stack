@@ -1,0 +1,10 @@
+a server is a physical machine that host a webserver
+the domain name is for accessing the web server
+the DNS record www stores the ip address ofthe server
+the web server isolates what you want people to acces from everything else on the server
+the role of the application server is to handle the apllication and its database referencing
+the database stores data to be used in the application
+the webserver contains a html index page to allow for the user to interract with the application
+SPOF stands for single point of failure and the spof with this webserver design is if the server needed to be updated either hardware or software
+downtime is however long it takes to get the main server back up
+and its limited to the hardware available to it

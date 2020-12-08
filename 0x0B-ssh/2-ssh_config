@@ -1,0 +1,4 @@
+HOST 1824-web-01
+  HostName 35.243.141.236
+  PasswordAuthentication no
+  IdentitiyFile ~/.ssh/holberton

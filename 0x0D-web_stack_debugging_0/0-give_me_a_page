@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # fixes the docker page
 sudo apt-get -y update
-sudo apt-get -y apache2
+sudo apt-get -y install apache2
 sudo service apache2 start

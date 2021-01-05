@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo su -c whoami $1

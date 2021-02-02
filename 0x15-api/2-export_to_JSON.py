@@ -12,7 +12,7 @@ if __name__ == "__main__":
     todourl = 'https://jsonplaceholder.typicode.com/todos?userId=' + empid
     users = get(userurl).json()
     numof_tsk = get(todourl).json()
-    name = user.get("username")
+    name = users.get("username")
     ans = {}
     tasks = []
     for toto in numof_tsk:

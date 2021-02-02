@@ -8,7 +8,7 @@ from sys import argv
 if __name__ == "__main__":
     """displays completed tasks"""
     TOTAL_NUMBER_OF_TASKS = 0
-    NUMBER_OF_DONE_TASKS = 0 
+    NUMBER_OF_DONE_TASKS = 0
     TASKS = []
     empid = argv[1]
     empurl = 'https://jsonplaceholder.typicode.com/users/{}'\
@@ -21,10 +21,9 @@ if __name__ == "__main__":
     for toto in urlreq:
         if toto.get('userId') == int(empid):
             TOTAL_NUMBER_OF_TASKS += 1
-            if toto.get('completed') is TRUE:
+            if toto.get('completed') is True:
                 NUMBER_OF_DONE_TASKS += 1
                 TASKS.append(toto.get("title"))
     print('{}/{}):'.format(NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
     for TASK_TITLE in TASKS:
         print('\t {}'.format(TASK_TITLE))
-

@@ -19,7 +19,7 @@ if __name__ == "__main__":
         dictask = {}
         dictask["username"] = str(name)
         dictask["completed"] = toto.get("completed")
-        dictask["task"] = str(todo.get("title"))
+        dictask["task"] = str(toto.get("title"))
         tasks.append(dictask)
     ans.update({users.get(id): tasks})
     file_name = "{}.json".format(empid)

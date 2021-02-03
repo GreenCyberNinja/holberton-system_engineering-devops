@@ -24,6 +24,6 @@ if __name__ == "__main__":
             if toto.get('completed') is True:
                 NUMBER_OF_DONE_TASKS += 1
                 TASKS.append(toto.get("title"))
-    print('{}/{}):'.format(NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
+    print('({}/{}):'.format(NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
     for TASK_TITLE in TASKS:
         print('\t {}'.format(TASK_TITLE))

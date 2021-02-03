@@ -11,7 +11,7 @@ if __name__ == "__main__":
     tasks = get(url + '/users/' + argv[1] + '/todos').json()
 
     with open('{}.csv'.format(argv[1]), 'w+') as csvfile:
-        ghst_wrtr = csv.writer(cvsfile, quoting=csv.QUOTE_ALL)
+        ghst_wrtr = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in tasks:
             line = []
             line.append(argv[1])

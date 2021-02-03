@@ -6,22 +6,16 @@ from sys import argv
 import json
 
 if __name__ == "__main__":
-    """displays completed tasks"""
-    empid = argv[1]
-    userurl = 'https://jsonplaceholder.typicode.com/users/' + empid
-    todourl = 'https://jsonplaceholder.typicode.com/todos?userId=' + empid
-    users = get(userurl).json()
-    numof_tsk = get(todourl).json()
-    name = users.get("username")
-    ans = {}
-    tasks = []
-    for toto in numof_tsk:
-        dictask = {}
-        dictask["username"] = str(name)
-        dictask["completed"] = toto.get("completed")
-        dictask["task"] = str(toto.get("title"))
-        tasks.append(dictask)
-    ans.update({users.get(id): tasks})
-    file_name = "{}.json".format(empid)
-    with open(file_name, mode='w+', newline='') as jsonfile:
-        jsonfile.write(json.dumps(ans))
+    url = 'https://jsonplaceholder.typicode.com'
+    username = get(url + '/users/' + argv[1]).json().get('username')
+    tasks = get(url + '/users/' + argv[1] + '/todos').json()
+    tasklist = []
+    for task in tasks:
+        taskdict = {}
+        taskdict["task"] = task.get('title')
+        taskdict["completed"] = task.get('completed')
+        taskdict["username"] = "{}".format(username)
+        tasklist.append(taskdict)
+    userdict = {argv[1]: tasklist}
+    with open('{}.json'.format(argv[1]), 'w') as jsonfile:
+        jsonfile.write(json.dumps(userdict))

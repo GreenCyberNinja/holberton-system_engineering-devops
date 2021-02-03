@@ -9,8 +9,9 @@ if __name__ == "__main__":
     usernames = get(url + '/users/').json()
     userdict = {}
     for user in usernames:
-        username = get(url + '/users/' + str(user["id"])).json().get('username')
-        tasks = get(url + '/users/' + str(user["id"]) +'/todos').json()
+        username = get(url + '/users/' +
+                       str(user["id"])).json().get('username')
+        tasks = get(url + '/users/' + str(user["id"]) + '/todos').json()
         tasklist = []
         for task in tasks:
             taskdict = {}

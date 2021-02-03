@@ -6,22 +6,16 @@ from sys import argv
 import csv
 
 if __name__ == "__main__":
-    """displays completed tasks"""
-    empid = argv[1]
-    userurl = 'https://jsonplaceholder.typicode.com/users/' + empid
-    todourl = 'https://jsonplaceholder.typicode.com/todos?userId=' + empid
-    users = get(userurl).json()
-    toto = get(todourl)
-    FILE = "{}.csv".format(argv[1])
+    url = 'https://jsonplaceholder.typicode.com'
+    username = get(url + '/users/' + argv[1]).json().get('username')
+    tasks = get(url + '/users/' + argv[1] + '/todos').json()
 
-    with open(FILE, mode='w+', newline='') as cvs:
-        ghost_writer = csv.writer(cvs, delimiter=',', quotechar='"',
-                                  quoting=csv.QUOTE_ALL)
-        TASKS = []
-        for to in toto.json():
-            TASKS.append(users.get("id"))
-            TASKS.append(users.get("username"))
-            TASKS.append(users.get("completed"))
-            TASKS.append(users.get("title"))
-            ghost_writer.writerow(TASKS)
-            TASKS = []
+    with open('{}.csv'.format(argv[1]), 'w+') as csvfile:
+        ghst_wrtr = csv.writer(cvsfile, quoting=csv.QUOTE_ALL)
+        for task in tasks:
+            line = []
+            line.append(argv[1])
+            line.append(username)
+            line.append(task.get('completed'))
+            line.append(task.get('title'))
+            ghst_wrtr.writerow(line)

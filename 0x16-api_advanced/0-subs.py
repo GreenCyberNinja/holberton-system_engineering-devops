@@ -5,13 +5,11 @@ from requests import get
 
 def number_of_subscribers(subreddit):
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {'user-agent': 'user',}
-    try:
-        Rdict = get(url, headers=headers, allow_redirects=False).json()
-    except(ValueError):
-        return 0;
-    data = Rdict.get('data')
-    sub = data.get('subscribers')
-    if sub == None:
-        sub = 0;
-    return sub
+    headers = {'user-agent': 'user'}
+    Rdict = get(url, headers=headers, allow_redirects=False)
+    if Rdict.status_code is not 200:
+        return 0
+    else:
+        data = Rdict.json().get('data')
+        sub = data.get('subscribers')
+        return sub

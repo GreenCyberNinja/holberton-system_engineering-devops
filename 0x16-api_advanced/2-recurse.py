@@ -6,7 +6,9 @@ from requests import get
 def recurse(subreddit, hot_list=[], after=''):
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     headers = {'user-agent': 'user'}
-    Rdict = get(url, headers=headers, params={'after': after}, allow_redirects=False)
+    Rdict = get(url, headers=headers,
+                params={'after': after},
+                allow_redirects=False)
     if Rdict.status_code is not 200:
         return('None')
     else:

@@ -10,7 +10,7 @@ def recurse(subreddit, hot_list=[], after=''):
                 params={'after': after},
                 allow_redirects=False)
     if Rdict.status_code is not 200:
-        return('None')
+        return None
     else:
         data = Rdict.json().get('data').get('children')
         for title in data:
